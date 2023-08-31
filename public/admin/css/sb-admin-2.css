@@ -607,9 +607,10 @@ pre code {
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
 .col-xl-auto {
   position: relative;
-  width: 100%;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+width: 100%;
+padding-right: 0.25rem; /* Mengurangi nilai padding */
+padding-left: 0.25rem;  /* Mengurangi nilai padding */
+
 }
 
 .col {
@@ -670,8 +671,8 @@ pre code {
 }
 
 .col-4 {
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
+  flex: 0 0 15%;
+  max-width: 15%;
 }
 
 .col-5 {

@@ -94,8 +94,12 @@
         @enderror --}}
       </div>
 
+      <div class="index-btn-wrapper">
+        <div class="index-btn" onclick="run(1, 2);">Next</div>
+      </div>
+
       <!-- form tambahan untuk pilih tujuan kunjungan -->
-      <div class="form-group mb-3">
+      <!-- <div class="form-group mb-3">
         <label class="purpose" for="purposevtwo" style="color:#000000">Keperluan Anda</label>
         <select class="custom-select my-1 mr-sm-2" name="purposevtwo" id="purposevtwo" required>
         <option selected="false" disabled="disabled">Silakan Pilih Keperluan Anda</option>
@@ -104,11 +108,11 @@
           @endforeach
         </select>
       </div>
-      <br><br>
+      <br><br> -->
     </div>
 
     
-    <div class="row" id="tabrow-1">
+    <!-- <div class="row" id="tabrow-1"> -->
 
       <div class="tab" id="tab-2">
         <h3 style="text-align: center; font-family: sans-serif;">Riwayat Pendidikan</h3>
@@ -160,8 +164,71 @@
       </div>
   
       <div class="tab" id="tab-3">
-        <h3 style="text-align: center; font-family: sans-serif;">Media Pelayanan</h3>
+        <h3 style="text-align: center; font-family: sans-serif;">Jenis Pelayanan</h3>
   
+        <!-- <div class="input-group">
+          <div class="form-group mb-3">
+            <label class="label" for="media" style="color:#000000">Media Pelayanan</label>
+            <select class="custom-select my-1 mr-sm-2" name="media" id="inlineFormCustomSelectPref" style="font-size: 14px;">
+              <option selected="false" disabled="disabled">Silakan Pilih Media Pelayanan</option>
+              @foreach ($media as $p)
+              <option value="{{ $p->id }}">{{$p->media_type}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div> -->
+  
+        <!-- <div class="input-group">
+          <div class="form-group mb-3">
+            <label class="label" for="media" style="color:#000000">Kebutuhan Data</label>
+            <select class="custom-select my-1 mr-sm-2" name="sub_categories" id="inlineFormCustomSelectPref" style="font-size: 14px;">
+              <option selected="false" disabled="disabled">Silakan Pilih Kebutuhan Data</option>
+              @foreach($categories as $group)
+              <optgroup label="{{$group->categories_type }}">
+                @foreach ($sub_categories as $s)
+                @if($s->id_categories == $group->id)
+                <option value="{{ $s->id}}">{{$s->sub_categories_type}}</option>
+                @endif
+                @endforeach
+              </optgroup>
+              @endforeach
+            </select>
+          </div> -->
+  
+        <div class="input-group">
+          <div class="form-group mb-3">
+            <label class="label" for="service" style="color:#000000">Keperluan Anda</label>
+            <select class="custom-select my-1 mr-sm-2" name="service" id="inlineFormCustomSelectPref" style="font-size: 14px;" required>
+              <option selected="false" disabled="disabled">Silakan Pilih Keperluan Anda</option>
+              @foreach ($service as $j)
+              <option value="{{ $j->id }}">{{$j->service_type}}</option>
+              @endforeach
+            </select>
+          </div>
+          <br><br>
+        </div>
+        <!-- <div class="index-btn-wrapper">
+          <div class="index-btn" onclick="run(3, 2);">Previous</div>
+          <div class="index-btn" onclick="run(3, 4);">Next</div>
+        </div> -->
+      </div>
+  
+      <div class="row" id="tabrow-1">
+      <div class="tab" id="tab-4">
+        <h3 style="text-align: center; font-family: sans-serif;">Tujuan Permintaan Data</h3>
+  
+        <div class="input-group">
+          <div class="form-group mb-3">
+            <label class="label" for="purpose" style="color:#000000">Keperluan Permintaan Data</label>
+            <select class="custom-select my-1 mr-sm-2" name="purpose" id="inlineFormCustomSelectPref" style="font-size: 14px;">
+              <option selected="false" disabled="disabled">Silakan Pilih Tujuan</option>
+              @foreach ($purpose as $p)
+              <option value="{{ $p->id }}">{{$p->purpose_type}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+
         <div class="input-group">
           <div class="form-group mb-3">
             <label class="label" for="media" style="color:#000000">Media Pelayanan</label>
@@ -173,7 +240,7 @@
             </select>
           </div>
         </div>
-  
+
         <div class="input-group">
           <div class="form-group mb-3">
             <label class="label" for="media" style="color:#000000">Kebutuhan Data</label>
@@ -190,40 +257,6 @@
               @endforeach
             </select>
           </div>
-        </div>
-  
-        <div class="input-group">
-          <div class="form-group mb-3">
-            <label class="label" for="service" style="color:#000000">Jenis Pelayanan</label>
-            <select class="custom-select my-1 mr-sm-2" name="service" id="inlineFormCustomSelectPref" style="font-size: 14px;">
-              <option selected="false" disabled="disabled">Silakan Pilih Jenis Pelayanan</option>
-              @foreach ($service as $j)
-              <option value="{{ $j->id }}">{{$j->service_type}}</option>
-              @endforeach
-            </select>
-          </div>
-        </div>
-  
-        <div class="index-btn-wrapper">
-          <div class="index-btn" onclick="run(3, 2);">Previous</div>
-          <div class="index-btn" onclick="run(3, 4);">Next</div>
-        </div>
-      </div>
-  
-      <div class="tab" id="tab-4">
-        <h3 style="text-align: center; font-family: sans-serif;">Tujuan Permintaan Data</h3>
-  
-        <div class="input-group">
-          <div class="form-group mb-3">
-            <label class="label" for="purpose" style="color:#000000">Tujuan</label>
-            <select class="custom-select my-1 mr-sm-2" name="purpose" id="inlineFormCustomSelectPref" style="font-size: 14px;">
-              <option selected="false" disabled="disabled">Silakan Pilih Tujuan</option>
-              @foreach ($purpose as $p)
-              <option value="{{ $p->id }}">{{$p->purpose_type}}</option>
-              @endforeach
-            </select>
-          </div>
-        </div>
   
         <div class="input-group">
           <label for="data" style="color:#000000">Catatan Data</label>
@@ -242,15 +275,6 @@
     <div class="row" id="tabrow-2">
       <div class="tab" id="tab-5">
         <h3 style="text-align: center; font-family: sans-serif;">Form Kunjungan</h3>
-        <div class="input-group">
-          <label for="institute" style="color:#000000">Nama instansi</label>
-          <input type="text" name="institute2" id="institute" class="form-control"
-            placeholder="Silakan isi nama instansi anda" maxlength="35" value="{{old('institute')}}"
-            data-parsley-pattern="/(^[a-zA-Z][a-zA-Z\s]{0,35}[a-zA-Z]$)/" data-parsley-trigger="keyup" style="font-size: 14px;"/>
-          {{-- @error('institute')
-          <div class="alert alert-danger">{{ $message }}</div>
-          @enderror --}}
-          </div>
   
           <div class="form-group mb-3">
             <label class="label" for="tujuankunjungan" style="color:#000000">Tujuan Kujungan</label>
@@ -313,19 +337,20 @@
   }
 
   // Add change event listener to "Tujuan Kunjungan" dropdown
-  $("#purposevtwo").change(function() {
+  $("#service").change(function() {
     $("#btn-submit-1").addClass("d-none")
     $("#btn-submit-2").addClass("d-none")
     
-    if (this.value === "1") { // "Kunjungan"
-      run(1, 5); // Go to Media Pelayanan tab
+    if (this.value === "1" || this.value === "2") { // "Permintaan Data"
+      run(3, 4); // Go to Media Pelayanan tab
       $("#btn-submit-1").remove()
       $("#tabrow-1").remove()
-    } else if (this.value === "2") { // "Permintaan Data"
-      run(1, 2); // Go to Riwayat Pendidikan tab
+    } else if (this.value === "3") { // "Kunjungan"
+      run(3, 5); // Go to Riwayat Pendidikan tab
       $("#btn-submit-2").remove()
       $("#tabrow-2").remove()
     }
+
   });
 
       $('#hp').on('keyup', function (){
